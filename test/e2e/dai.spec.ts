@@ -41,7 +41,7 @@ describe('DAI', function () {
       });
     });
     when('user has funds', () => {
-      let transferTx: TransactionResponse;
+      // let transferTx: TransactionResponse;
       let initialSenderBalance: BigNumber;
       let initialReceiverBalance: BigNumber;
       const amountToTransfer = utils.parseEther('1');
@@ -49,7 +49,7 @@ describe('DAI', function () {
         // We use our dai whale's impersonated signer
         initialSenderBalance = await dai.balanceOf(daiWhale._address);
         initialReceiverBalance = await dai.balanceOf(stranger.address);
-        transferTx = await dai.connect(daiWhale).transfer(stranger.address, amountToTransfer);
+        // transferTx = await dai.connect(daiWhale).transfer(stranger.address, amountToTransfer);
       });
       then('funds are taken from sender', async () => {
         expect(await dai.balanceOf(daiWhale._address)).to.be.equal(initialSenderBalance.sub(amountToTransfer));

@@ -1,7 +1,6 @@
 import chai, { expect } from 'chai';
-import { ethers } from 'hardhat';
 import { LazyGreeter, LazyGreeter__factory } from '@typechained';
-import { FakeContract, MockContract, smock } from '@defi-wonderland/smock';
+import { MockContract, smock } from '@defi-wonderland/smock';
 
 chai.use(smock.matchers);
 
