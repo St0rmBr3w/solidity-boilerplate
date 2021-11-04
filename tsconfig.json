@@ -15,6 +15,6 @@
       "@unit/*": ["test/unit/*"]
     }
   },
-  "include": ["./scripts", "./test"],
+  "include": ["./scripts", "./test", "./deploy"],
   "files": ["./hardhat.config.ts"]
 }

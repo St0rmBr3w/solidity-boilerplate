@@ -24,3 +24,6 @@ yarn.lock
 
 # Solidity
 contracts/mock
+
+# Deployments
+deployments

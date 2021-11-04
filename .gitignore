@@ -13,3 +13,7 @@ typechained
 
 # Config files
 .env
+
+# Local deployments
+deployments/localhost
+deployments/hardhat

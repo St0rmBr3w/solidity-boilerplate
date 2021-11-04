@@ -1,0 +1,28 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "contracts/Greeter.sol": {
+      "content": "//SPDX-License-Identifier: Unlicense\npragma solidity ^0.8.4;\n\n\n\n/// @title A contract for boilerplating\n/// @author Hardhat (and DeFi Wonderland)\n/// @notice You can use this contract for only the most basic tests\n/// @dev This is just a try out\n/// @custom:experimental This is an experimental contract.\n\ncontract Greeter {\n  event GreetingSet(string _greeting);\n\n  string public greeting;\n\n  constructor(string memory _greeting) {\n\n    greeting = _greeting;\n  }\n\n  function greet() public view returns (string memory) {\n    return greeting;\n  }\n\n  /// @notice Sets greeting that will be used during greet\n  /// @dev Some explanation only defined for devs\n  /// @param _greeting The greeting to be used\n  /// @return _changedGreet Was greeting changed or nah\n  function setGreeting(string memory _greeting) public returns (bool _changedGreet) {\n    require(bytes(_greeting).length > 0, 'Greeter: empty greeting');\n\n    greeting = _greeting;\n    _changedGreet = true;\n    emit GreetingSet(_greeting);\n  }\n}\n"
+    }
+  },
+  "settings": {
+    "optimizer": {
+      "enabled": true,
+      "runs": 200
+    },
+    "outputSelection": {
+      "*": {
+        "*": ["storageLayout", "abi", "evm.bytecode", "evm.deployedBytecode", "evm.methodIdentifiers", "metadata", "devdoc", "userdoc", "evm.gasEstimates"],
+        "": ["ast"]
+      }
+    },
+    "metadata": {
+      "useLiteralContent": true
+    },
+    "libraries": {
+      "": {
+        "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
+      }
+    }
+  }
+}

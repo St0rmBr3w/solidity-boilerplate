@@ -7,6 +7,7 @@ import '@nomiclabs/hardhat-etherscan';
 import { removeConsoleLog } from 'hardhat-preprocessor';
 import 'hardhat-gas-reporter';
 import 'solidity-coverage';
+import 'hardhat-deploy';
 import { HardhatUserConfig, NetworksUserConfig } from 'hardhat/types';
 import 'tsconfig-paths/register';
 import { getNodeUrl, accounts } from './utils/network';
@@ -17,7 +18,7 @@ const networks: NetworksUserConfig = process.env.TEST
       hardhat: {
         forking: {
           enabled: process.env.FORK ? true : false,
-          url: getNodeUrl('ropsten'),
+          url: getNodeUrl('mainnet'),
         },
       },
       localhost: {
@@ -81,6 +82,9 @@ const config: HardhatUserConfig = {
   typechain: {
     outDir: 'typechained',
     target: 'ethers-v5',
+  },
+  namedAccounts: {
+    deployer: 0,
   },
 };
 
