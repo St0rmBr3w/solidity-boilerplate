@@ -8,7 +8,6 @@ import { removeConsoleLog } from 'hardhat-preprocessor';
 import 'hardhat-gas-reporter';
 import 'hardhat-deploy';
 import 'solidity-coverage';
-import 'hardhat-deploy';
 import { HardhatUserConfig, MultiSolcUserConfig, NetworksUserConfig } from 'hardhat/types';
 import 'tsconfig-paths/register';
 import { getNodeUrl, accounts } from './utils/network';
@@ -84,9 +83,6 @@ const config: HardhatUserConfig = {
   typechain: {
     outDir: 'typechained',
     target: 'ethers-v5',
-  },
-  namedAccounts: {
-    deployer: 0,
   },
 };
 
